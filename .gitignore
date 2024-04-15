@@ -14,6 +14,7 @@ installer/runtime/*
 out/*
 target/*
 /target/
+.gradle/*
 .idea/*
 .vscode/*
 .VSCodeCounter/*
