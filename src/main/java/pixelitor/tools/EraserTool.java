@@ -24,15 +24,14 @@ import java.awt.Graphics2D;
 import java.awt.geom.Path2D;
 import java.util.ResourceBundle;
 
-import static pixelitor.gui.GUIText.*;
-import static pixelitor.gui.GUIShortcuts.*;
-
 /**
  * The eraser tool.
  */
 public class EraserTool extends AbstractBrushTool {
     public EraserTool() {
-        super(ERASER, ERASER_ALT, ERASER_MSG, Cursors.CROSSHAIR, true);
+        super("Eraser", 'E',
+            "<b>click and drag</b> to erase pixels. <b>Shift-click</b> to erase lines.",
+            Cursors.CROSSHAIR, true);
         drawDestination = DrawDestination.DIRECT;
     }
 

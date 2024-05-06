@@ -19,6 +19,7 @@ package pixelitor.tools;
 
 import pixelitor.colors.FgBgColors;
 import pixelitor.filters.gui.UserPreset;
+import pixelitor.gui.GUIText;
 import pixelitor.gui.utils.VectorIcon;
 import pixelitor.layers.Drawable;
 import pixelitor.tools.util.PMouseEvent;
@@ -33,17 +34,21 @@ import java.util.ResourceBundle;
 
 import static pixelitor.colors.FgBgColors.getBGColor;
 import static pixelitor.colors.FgBgColors.getFGColor;
-import static pixelitor.gui.GUIText.*;
-import static pixelitor.gui.GUIShortcuts.*;
 
 /**
  * The brush tool.
  */
 public class BrushTool extends BlendingModeBrushTool {
+    public static final String NAME = GUIText.BRUSH;
     private Color drawingColor;
 
     public BrushTool() {
-        super(BRUSH, BRUSH_ALT, BRUSH_MSG, Cursors.CROSSHAIR, true);
+        super(NAME, 'B',
+            "<b>click</b> or <b>drag</b> to draw with the current brush, " +
+                "<b>Shift-click</b> to draw lines, " +
+                "<b>right-click</b> or <b>right-drag</b> to draw with the background color.",
+            Cursors.CROSSHAIR, true
+        );
     }
 
     @Override

@@ -39,21 +39,13 @@ public class GUIText {
     public static final String COLOR = i18n("color");
     public static final String MIRROR = i18n("mirror");
     public static final String RADIUS = i18n("radius");
-    
+    public static final String BRUSH = i18n("brush");
     public static final String TYPE = i18n("type");
     public static final String FILL_WITH = i18n("fill_with");
     public static final String FG_COLOR = i18n("fg_color");
     public static final String BG_COLOR = i18n("bg_color");
 
     public static final String HELP = i18n("help");
-
-    // Tools
-    public static final String BRUSH = i18n("brush");
-    public static final String BRUSH_MSG = i18n("brush_msg");
-    public static final String CLONE = i18n("clone");
-    public static final String CLONE_MSG = i18n("clone_msg");
-    public static final String ERASER = i18n("eraser");
-    public static final String ERASER_MSG = i18n("eraser_msg");
 
     private GUIText() {
     }

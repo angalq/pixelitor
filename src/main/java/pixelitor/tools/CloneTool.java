@@ -46,12 +46,11 @@ import java.util.ResourceBundle;
 
 import static java.awt.BasicStroke.CAP_BUTT;
 import static java.awt.BasicStroke.JOIN_ROUND;
+import static pixelitor.gui.GUIText.CLOSE_DIALOG;
 import static pixelitor.gui.utils.SliderSpinner.TextPosition.NONE;
 import static pixelitor.tools.CloneTool.State.CLONING;
 import static pixelitor.tools.CloneTool.State.NO_SOURCE;
 import static pixelitor.tools.CloneTool.State.SOURCE_DEFINED_FIRST_STROKE;
-import static pixelitor.gui.GUIText.*;
-import static pixelitor.gui.GUIShortcuts.*;
 
 /**
  * The clone stamp tool.
@@ -88,7 +87,10 @@ public class CloneTool extends BlendingModeBrushTool {
     private boolean showUndefinedSourceDialog;
 
     protected CloneTool() {
-        super(CLONE, CLONE_ALT, CLONE_MSG, Cursors.CROSSHAIR, false);
+        super("Clone Stamp", 'S',
+            "<b>Alt-click</b> (or <b>right-click</b>) to select the source, " +
+                "then <b>drag</b> to paint. <b>Shift-click</b> to clone along a line.",
+            Cursors.CROSSHAIR, false);
     }
 
     @Override
