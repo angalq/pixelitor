@@ -489,8 +489,6 @@ public class MenuBar extends JMenuBar {
         sub.add(new OpenViewEnabledAction("Convert Visible to Group",
             comp -> comp.getHolderForGrouping().convertVisibleLayersToGroup()), CTRL_SHIFT_G);
 
-//        Condition isLayerGroup = new ClassCondition(LayerGroup.class, "layer group");
-
         sub.add(new OpenViewEnabledAction("Ungroup",
             comp -> comp.getActiveLayer().unGroup()), CTRL_U);
 
@@ -553,9 +551,8 @@ public class MenuBar extends JMenuBar {
             }
 
             IO.loadCompAsync(file)
-                .thenAcceptAsync(content -> {
-                    comp.add(new SmartObject(file, comp, content));
-                }, Threads.onEDT)
+                .thenAcceptAsync(content ->
+                    comp.add(new SmartObject(file, comp, content)), Threads.onEDT)
                 .exceptionally(Messages::showExceptionOnEDT);
         }));
 
@@ -1085,9 +1082,9 @@ public class MenuBar extends JMenuBar {
 
         sub.addFilter(CircleWeave.NAME, CircleWeave::new);
         sub.addFilter(FlowerOfLife.NAME, FlowerOfLife::new);
-        sub.addFilter(FractalCurves.NAME, FractalCurves::new);
         sub.addFilter(Grid.NAME, Grid::new);
         sub.addFilter(Lissajous.NAME, Lissajous::new);
+        sub.addFilter(LSystems.NAME, LSystems::new);
         sub.addFilter(SpiderWeb.NAME, SpiderWeb::new);
         sub.addFilter(Spiral.NAME, Spiral::new);
         sub.addFilter(Spirograph.NAME, Spirograph::new);

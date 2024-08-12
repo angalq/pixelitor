@@ -2050,7 +2050,7 @@ public class Shapes {
      * @param margin The margin around the shape inside the target rectangle.
      * @return A new shape that fits within the target rectangle.
      */
-    public static Shape resize(Shape shape, double width, double height, double margin) {
+    public static Shape resizeToFit(Shape shape, double width, double height, double margin) {
         Rectangle2D bounds = shape.getBounds2D();
         double shapeAspectRatio = bounds.getWidth() / bounds.getHeight();
         double areaWidth = width - 2 * margin;
@@ -2213,7 +2213,6 @@ public class Shapes {
         }, RECT_TO_POLAR("Rectangular to Polar", false) {
             @Override
             public PointMapper createMapper(Point2D center, double tuning, int width, int height) {
-//                double maxR = Math.sqrt(width * width + height * height) / 2.0;
                 double maxR = Math.min(width, height) / 2.0;
                 return (x, y) -> {
                     double r = x * maxR / width;
